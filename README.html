@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+  }
+
+  .search-container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .logo {
+    max-width: 120px;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 10px;
+    outline: none;
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: #4285F4;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #357AE8;
+  }
+
+  /* Estilos específicos para dispositivos com largura de tela menor que 600px (geralmente dispositivos móveis) */
+  @media (max-width: 600px) {
+    body {
+      background-color: white;
+    }
+
+    input[type="password"] {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .logo {
+      max-width: 80px;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="search-container">
+  <img class="logo" src="https://files.catbox.moe/96ma5l.png" alt="Logo do Site">
+  <h2>Coloque a senha:</h2>
+  <input type="password" id="searchTerm" placeholder="Senha" onkeyup="checkEnter(event)">
+  <br>
+  <button onclick="search()">Acessar</button>
+</div>
+
+<script>
+function search() {
+  var searchTerm = document.getElementById("searchTerm").value.toLowerCase();
+  var siteList = {
+    "yas": "https://www.tiktok.com/@recordtvoficial/video/7095892515785690374?q=cntada%20faro&t=1693150171423",
+    // Adicione mais sites aqui...
+  };
+  
+  if (siteList[searchTerm]) {
+    window.location.href = siteList[searchTerm];
+  } else {
+    alert("Site não reconhecido.");
+  }
+}
+
+function checkEnter(event) {
+  if (event.keyCode === 13) {
+    var searchTerm = document.getElementById("searchTerm").value.toLowerCase();
+    var siteList = {
+      "yas": "https://www.tiktok.com/@recordtvoficial/video/7095892515785690374?q=cntada%20faro&t=1693150171423",
+      // Adicione mais sites aqui...
+    };
+
+    if (siteList[searchTerm]) {
+      window.location.href = siteList[searchTerm]; // Redireciona para o site correspondente
+    } else {
+      alert("senha: yas.");
+    }
+  }
+}
+</script>
+
+</body>
+</html>
